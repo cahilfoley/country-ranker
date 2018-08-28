@@ -36,7 +36,11 @@ const AppDrawer = ({ activePage, classes, open, toggle, navigateTo }) => {
       <Divider />
       <List style={{ width: 320 }} component="nav">
         {criteria.map(({ label, icon: Icon }) => (
-          <MenuItem onClick={navigateTo(label)} selected={activePage === label}>
+          <MenuItem
+            onClick={navigateTo(label)}
+            selected={activePage === label}
+            key={label}
+          >
             <ListItemIcon>
               <Icon />
             </ListItemIcon>

@@ -9,10 +9,12 @@ import CountryDetails from './screens/CountryDetails'
 import CountryGrid from './screens/CountryGrid'
 import CountryRank from './screens/CountryRank'
 
-import './styles.css'
-
 class App extends React.Component {
-  state = { country: null, drawerOpen: false, activePage: 'Overall Result' }
+  state = {
+    country: null,
+    drawerOpen: false,
+    activePage: 'All Countries'
+  }
 
   toggleDrawer = () => {
     this.setState(state => ({ drawerOpen: !state.drawerOpen }))
@@ -23,7 +25,6 @@ class App extends React.Component {
   }
 
   selectCountry = country => () => {
-    console.log(country)
     this.setState({ country })
   }
 
@@ -42,7 +43,7 @@ class App extends React.Component {
           navigateTo={this.navigateTo}
         />
         {country ? (
-          <CountryDetails country={country} />
+          <CountryDetails country={country} back={this.selectCountry(null)} />
         ) : activePage === 'All Countries' ? (
           <CountryGrid selectCountry={this.selectCountry} />
         ) : (
@@ -59,4 +60,7 @@ class App extends React.Component {
 const Root = withTheme()(App)
 
 const rootElement = document.getElementById('root')
-ReactDOM.render(<Root />, rootElement)
+setTimeout(() => {
+  document.getElementById('loadingMapWrapper').remove()
+  ReactDOM.render(<Root />, rootElement)
+}, 2000)

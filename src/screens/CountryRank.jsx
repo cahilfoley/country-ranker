@@ -14,7 +14,7 @@ class CountryGrid extends React.Component {
 
     return (
       <div style={{ padding: 24 }}>
-        <Typography variant="display1" gutterBottom align="center">
+        <Typography variant="display1" gutterBottom>
           {activePage}
         </Typography>
         <FlagList
