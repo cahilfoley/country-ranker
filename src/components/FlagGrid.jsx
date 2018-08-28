@@ -7,7 +7,7 @@ import Paper from '@material-ui/core/Paper'
 export default ({ countries, onClick }) => (
   <Grid container spacing={16} style={{ paddingTop: 16, marginBottom: 16 }}>
     {countries.map(country => (
-      <Grid item xs={4} lg={3} style={{ height: '100%' }}>
+      <Grid key={country.name} item xs={4} lg={3} style={{ height: '100%' }}>
         <Paper>
           <MenuItem
             onClick={onClick(country)}

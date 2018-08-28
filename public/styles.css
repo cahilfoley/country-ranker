@@ -1,0 +1,45 @@
+/* 
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+svg {
+  position: absolute;
+  bottom: 10px;
+  display: block;
+  font: 10.5em 'Montserrat';
+  width: 350px;
+  height: 300px;
+  margin: 0 auto;
+}
+.text-copy {
+  fill: none;
+  stroke: white;
+  stroke-dasharray: 6% 29%;
+  stroke-width: 5px;
+  stroke-dashoffset: 0%;
+  animation: stroke-offset 5.5s infinite linear;
+}
+.text-copy:nth-child(1) {
+  stroke: #7986cb;
+  animation-delay: -1;
+}
+.text-copy:nth-child(2) {
+  stroke: #c51162;
+  animation-delay: -2s;
+}
+.text-copy:nth-child(3) {
+  stroke: #303f9f;
+  animation-delay: -3s;
+}
+.text-copy:nth-child(4) {
+  stroke: #3f51b5;
+  animation-delay: -4s;
+}
+.text-copy:nth-child(5) {
+  stroke: #f50057;
+  animation-delay: -5s;
+}
+@keyframes stroke-offset {
+  100% {
+    stroke-dashoffset: -35%;
+  }
+} */

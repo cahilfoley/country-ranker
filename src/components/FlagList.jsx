@@ -10,7 +10,7 @@ export default ({ countries, criteria, onClick }) => (
   <Paper>
     <List>
       {countries.map(country => (
-        <ListItem button onClick={onClick(country)}>
+        <ListItem key={country.name} button onClick={onClick(country)}>
           <img
             src={`https://www.countryflags.io/${country.code}/flat/64.png`}
             alt={`${country.name} Flag`}
