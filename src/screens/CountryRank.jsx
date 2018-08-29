@@ -9,7 +9,7 @@ class CountryGrid extends React.Component {
     const { activePage, selectCountry } = this.props
 
     const filteredCountries = countries.sort(
-      (a, b) => (a[activePage] < b[activePage] ? 1 : -1)
+      (a, b) => (a[activePage].value < b[activePage].value ? 1 : -1)
     )
 
     return (
