@@ -9,12 +9,9 @@ import CountryDetails from './screens/CountryDetails'
 import CountryGrid from './screens/CountryGrid'
 import CountryRank from './screens/CountryRank'
 
-import countries from './data/countries'
-console.log(countries)
-
 class App extends React.Component {
   state = {
-    country: countries[0],
+    country: null,
     drawerOpen: false,
     activePage: 'All Countries'
   }
