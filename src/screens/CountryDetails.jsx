@@ -1,9 +1,7 @@
 import React from 'react'
 import Typography from '@material-ui/core/Typography'
-import Table from '@material-ui/core/Table'
-import TableBody from '@material-ui/core/TableBody'
-import TableCell from '@material-ui/core/TableCell'
-import TableRow from '@material-ui/core/TableRow'
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem'
 import Paper from '@material-ui/core/Paper'
 import IconButton from '@material-ui/core/IconButton'
 import ArrowLeft from 'mdi-material-ui/ArrowLeft'
@@ -19,16 +17,30 @@ export default ({ back, country }) => (
       <Typography variant="display1">{country.name}</Typography>
     </div>
     <Paper>
-      <Table>
-        <TableBody>
-          {criteria.map(item => (
-            <TableRow key={item.label}>
-              <TableCell>{item.label}</TableCell>
-              <TableCell>{country[item.label]}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+      {criteria.map(item => (
+        <List>
+          <ListItem key={item.label} divider>
+            <Typography variant="subheading" style={{ flexGrow: 1 }}>
+              {item.label}
+            </Typography>
+            <Typography variant="subheading">
+              {country[item.label].value}%
+            </Typography>
+          </ListItem>
+          {country[item.label].components &&
+            country[item.label].components.map(component => (
+              <ListItem key={component.label} style={{ paddingLeft: 48 }}>
+                <Typography
+                  variant="subheading"
+                  style={{ flexGrow: 1, paddingRight: 16 }}
+                >
+                  {component.label}
+                </Typography>
+                <Typography variant="subheading">{component.value}%</Typography>
+              </ListItem>
+            ))}
+        </List>
+      ))}
     </Paper>
   </div>
 )

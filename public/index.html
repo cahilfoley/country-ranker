@@ -5,8 +5,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="theme-color" content="#000000">
-  <!-- <link rel='stylesheet' href='./styles.css' /> -->
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' />
+	<!-- <link rel='stylesheet' href='./styles.css' /> -->
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' />
 	<!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
@@ -30,38 +30,39 @@
 		You need to enable JavaScript to run this app.
 	</noscript>
 	<div id="root"></div>
-  <div id='loadingMapWrapper'>
-    <style>
-      #loadingMapWrapper {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-      }
+	<div id='loadingMapWrapper'>
+		<style>
+			#loadingMapWrapper {
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+			}
 
-      #loadingMap {
-        width: 100%;
-        height: auto;
-      }
+			#loadingMap {
+				width: auto;
+				height: 60vh;
+			}
 
-      #loadingTitle {
-        position: fixed;
-        top: 10vh;
-        font-family: 'Roboto', sans-serif;
-        color: rgba(0, 0, 0, 0.87);
-        font-weight: 400;
-      }
-    </style>
-    <h2 id='loadingTitle'>Loading, please wait...</h2>
-    <div>
-      <img id='loadingMap' src='./world-map.jpg' alt='World Map' />
-    </div>
-    <!-- <svg viewBox="0 0 960 300">
+			#loadingTitle {
+				position: fixed;
+				top: 8vh;
+				font-family: 'Roboto', sans-serif;
+				color: rgba(0, 0, 0, 0.87);
+				font-weight: 400;
+			}
+		</style>
+		<h2 id='loadingTitle'>Loading, please wait...</h2>
+		<div>
+			<img id='loadingMap' src='https://uploads.codesandbox.io/uploads/user/2dbbf1f1-cd2d-4b8c-9517-34a522282a22/GqpL-World_map_blank_without_borders.svg'
+			 alt='World Map' />
+		</div>
+		<!-- <svg viewBox="0 0 960 300">
       <symbol id="s-text">
         <text text-anchor="middle" x="50%" y="80%">Loading</text>
       </symbol>
@@ -74,7 +75,7 @@
         <use xlink:href="#s-text" class="text-copy"></use>
       </g>
     </svg> -->
-  </div>
+	</div>
 	<!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

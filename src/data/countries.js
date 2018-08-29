@@ -1,5 +1,7 @@
 import criteria from './criteria'
 
+const getRandomScore = () => Math.floor(Math.random() * 1000) / 10
+
 export default [
   {
     name: 'Afghanistan',
@@ -454,9 +456,29 @@ export default [
     code: 'ZW'
   }
 ].map(country => {
+  let overallTotal = 0
+  let overallCount = 0
   criteria.forEach(item => {
-    country[item.label] = Math.floor(Math.random() * 1000) / 10
+    if (item.components) {
+      const output = { label: item.label }
+      let total = 0
+
+      output.components = item.components.map(component => {
+        const value = getRandomScore()
+        total += value
+        overallCount++
+        return { label: component, value }
+      })
+
+      overallTotal += total
+      output.value = Math.floor((total / item.components.length) * 10) / 10
+
+      country[item.label] = output
+    }
   })
 
+  country['Overall Result'] = {
+    value: Math.floor((overallTotal / overallCount) * 10) / 10
+  }
   return country
 })
