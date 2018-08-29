@@ -9,9 +9,12 @@ import CountryDetails from './screens/CountryDetails'
 import CountryGrid from './screens/CountryGrid'
 import CountryRank from './screens/CountryRank'
 
+import countries from './data/countries'
+console.log(countries)
+
 class App extends React.Component {
   state = {
-    country: null,
+    country: countries[0],
     drawerOpen: false,
     activePage: 'All Countries'
   }
@@ -61,6 +64,6 @@ const Root = withTheme()(App)
 
 const rootElement = document.getElementById('root')
 setTimeout(() => {
-  document.getElementById('loadingMapWrapper').remove()
+  document.getElementById('loadingMapWrapper').style.display = 'none'
   ReactDOM.render(<Root />, rootElement)
 }, 2000)
